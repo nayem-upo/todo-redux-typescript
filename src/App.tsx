@@ -1,11 +1,9 @@
-import './App.css'
-import { Button } from './components/ui/button'
+import Todo from './pages/todo'
 
 function App() {
   return (
     <div>
-      <h1>My Todo</h1>
-      <Button>Button</Button>
+      <Todo></Todo>
     </div>
   )
 }

@@ -13,14 +13,19 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "../textarea";
 import { FormEvent, useState } from "react";
 import { DialogClose } from "@radix-ui/react-dialog";
+import { useAppDispatch } from "@/redux/hook";
+import { addTodo } from "@/redux/features/todoSlice";
 
 const AddTodoModals = () => {
     const [task, setTask] = useState('')
     const [description, setDescription] = useState('')
 
+    const dispatch = useAppDispatch()
+
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        console.log({ task, description });
+        const id = Math.random().toString(36).substring(2, 50);
+        dispatch(addTodo({ id, task, description }));
     }
     return (
         <Dialog>

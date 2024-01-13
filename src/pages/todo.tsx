@@ -1,8 +1,12 @@
+import Container from "@/components/ui/Container";
+import TodoContainer from "@/components/ui/todo/TodoContainer";
+
 const Todo = () => {
     return (
-        <div>
-            <h1>Todo page</h1>
-        </div>
+        <Container>
+            <h1 className="text-center text-3xl font-semibold my-10">My Todos</h1>
+            <TodoContainer />
+        </Container>
     );
 };
 
